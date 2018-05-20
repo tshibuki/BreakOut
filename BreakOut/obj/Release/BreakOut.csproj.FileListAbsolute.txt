@@ -1,0 +1,9 @@
+J:\user\cs\BreakOut\BreakOut\bin\Release\BreakOut.exe.config
+J:\user\cs\BreakOut\BreakOut\bin\Release\BreakOut.exe
+J:\user\cs\BreakOut\BreakOut\bin\Release\BreakOut.pdb
+J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.Form1.resources
+J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.Properties.Resources.resources
+J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.csproj.GenerateResource.cache
+J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.csproj.CoreCompileInputs.cache
+J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.exe
+J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.pdb
