@@ -7,3 +7,4 @@ J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.csproj.GenerateResource.cache
 J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.csproj.CoreCompileInputs.cache
 J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.exe
 J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.pdb
+J:\user\cs\BreakOut\BreakOut\obj\Release\BreakOut.csprojAssemblyReference.cache

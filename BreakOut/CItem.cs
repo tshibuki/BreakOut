@@ -30,6 +30,30 @@ namespace BreakOut
         /// </summary>
         private int _height = 16;
         public int Height { get => _height; set => _height = value; }
+
+        /// <summary>
+        /// 左
+        /// </summary>
+        /// <returns></returns>
+        public int Left()   { return _x; }
+
+        /// <summary>
+        /// 上
+        /// </summary>
+        /// <returns></returns>
+        public int Top()    { return _y; }
+
+        /// <summary>
+        /// 右
+        /// </summary>
+        /// <returns></returns>
+        public int Right()  { return _x + _width; }
+
+        /// <summary>
+        /// 下
+        /// </summary>
+        /// <returns></returns>
+        public int Bottom() { return _y + _height; }
     }
 
     /// <summary>

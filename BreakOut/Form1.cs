@@ -243,9 +243,7 @@ namespace BreakOut
             }
 
             // パドル当たり判定
-
-            if (CheckRectangle(Ball.X, Ball.Y, Ball.Width, Ball.Height,
-                                Paddle.X, Paddle.Y, Paddle.Width, Paddle.Height))
+            if (CheckRectangle(Ball, Paddle))
             {
                 Ball.SpeedY = -Ball.SpeedY;
                 Ball.Y = Paddle.Y - Ball.Height;
@@ -260,15 +258,14 @@ namespace BreakOut
                 if (item.State == false) continue;
 
                 // ブロックにボールが当たったらブロックを消し、ボールは跳ね返る
-                if (CheckRectangle(Ball.X, Ball.Y, Ball.Width, Ball.Height,
-                                    item.X, item.Y, item.Width, item.Height))
+                if (CheckRectangle(Ball, item))
                 {
                     hit++;
-                    int dx = item.X - Ball.X - item.Width / 2 - Ball.Width;
-                    int dy = item.Y - Ball.Y - item.Height / 2 - Ball.Height;
+                    int dx = item.X - Ball.X - item.Width / 2 - Ball.Width / 2;
+                    int dy = item.Y - Ball.Y - item.Height / 2 - Ball.Height / 2;
                     if (dy == 0)
                     {
-                        //Ball.SpeedY = -Ball.SpeedY;
+                        Ball.SpeedY = -Ball.SpeedY;
                     }
                     else if (Math.Abs(dx / dy) > (item.Width / item.Height))
                     {
@@ -363,29 +360,17 @@ namespace BreakOut
         /// <param name="bw">bの幅</param>
         /// <param name="bh">bの左座標</param>
         /// <returns></returns>
-        private bool CheckRectangle(int ax, int ay, int aw, int ah, int bx, int by, int bw, int bh)
+//        private bool CheckRectangle(int ax, int ay, int aw, int ah, int bx, int by, int bw, int bh)
+        private bool CheckRectangle(CItem item1, CItem item2)
         {
-            // aがbの右にある
-            if (ax > bx + bw)
+            if ((item1.Right() < item2.Left()) ||   // item1がitem2の左にある
+                (item2.Right() < item1.Left()) ||   // item1がitem2の右にある
+                (item1.Top() > item2.Bottom()) ||   // item1がitem2の下にある
+                (item2.Top() > item1.Bottom()))     // item1がitem2の上にある
             {
                 return false;
             }
-            // aがbの左にある
-            if (bx > ax + aw)
-            {
-                return false;
-            }
-            // aがbの下にある
-            if (ay > by + bh)
-            {
-                return false;
-            }
-            // aがbの上にある
-            if (by > ay + ah)
-            {
-                return false;
-            }
-            // aとbは重なっている
+            // item1がitem2は重なっている
             return true;
         }
     }
